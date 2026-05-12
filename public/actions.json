@@ -1,0 +1,24 @@
+{
+  "rules": [
+    {
+      "pathPattern": "/sync-performance/**",
+      "apiPath": "/api/pulse-nexus/sync"
+    }
+  ],
+  "description": "Pulse Nexus: 实时物理表现同步接口。仅保留当前最高水位线，自动物理覆盖旧记录，确保零历史压力。",
+  "actions": [
+    {
+      "name": "同步最新最高时速",
+      "icon": "https://pulse-nexus.com/icon.png",
+      "description": "基于 GBM 随机过程模型验证当前物理突破。若高于当前记录，系统将自动执行物理覆盖。",
+      "label": "一键同步 (Overwriting Sync)",
+      "parameters": [
+        {
+          "name": "current_speed",
+          "label": "实时传感器时速 (km/h)",
+          "type": "number"
+        }
+      ]
+    }
+  ]
+}
